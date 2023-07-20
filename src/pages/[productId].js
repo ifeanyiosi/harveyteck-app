@@ -30,7 +30,7 @@ const ProductPage = ({ product }) => {
           {product ? (
             <ProductDetails product={product} />
           ) : (
-            <div>Product not found!</div>
+            <div>Product not found!!</div>
           )}
         </div>
         <div className="flex items-center w-full gap-4 lg:px-[150px] py-5 px-5">
