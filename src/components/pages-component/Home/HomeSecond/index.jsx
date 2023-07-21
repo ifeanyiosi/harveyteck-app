@@ -11,13 +11,13 @@ import Image from "next/image";
 const HomeSecond = () => {
   return (
     <section className="lg:px-[150px] flex flex-col items-center px-6 w-full">
-      <div className="my-[40px] w-full">
+      <div className="my-[40px] hidden lg:flex w-full">
         <h3 className="text-[28px] font-Inter font-[700] ">
           Shop our top categories
         </h3>
       </div>
 
-      <div className="w-full flex flex-col lg:flex-row items-center gap-4 justify-between">
+      <div className="w-full hidden lg:flex flex-col lg:flex-row items-center gap-4 justify-between">
         <div className="rounded-[10px] w-full">
           <Image
             className="w-full h-full object-cover rounded-[10px]"

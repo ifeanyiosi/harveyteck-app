@@ -21,7 +21,7 @@ const ProductCard = ({ product, onItemClick }) => {
   return (
     <Link
       href={`/${product.id}`}
-      className="w-full flex flex-col items-center justify-center rounded overflow-hidden shadow-lg px-6 py-8 cursor-pointer"
+      className="w-full flex flex-col items-center justify-center rounded overflow-hidden shadow-lg py-8 cursor-pointer"
       onClick={() => onItemClick(product.id)}
     >
       <Image
