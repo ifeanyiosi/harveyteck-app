@@ -1,18 +1,11 @@
-import Spinner from "@/components/Spinner";
+import React, { useState } from "react";
 import Image from "next/image";
-import React from "react";
 
 const ProductDetails = ({ product }) => {
-  const defaultImage = "https://via.placeholder.com/300";
-  const defaultDescription = "No description available";
-
-  if (!product) {
-    return (
-      <div>
-        <Spinner />
-      </div>
-    );
-  }
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const defaultImage =
+    "https://www.trustedreviews.com/wp-content/uploads/sites/54/2022/11/PS5-Review-8-scaled.jpg";
+  const defaultDescription = "Sony Playstation 5";
 
   const getRatingStars = (rating) => {
     const stars = [];
@@ -31,12 +24,20 @@ const ProductDetails = ({ product }) => {
 
   return (
     <div className="max-w-full h-full  mx-auto px-6 bg-white shadow-lg rounded-lg overflow-hidden">
+      {!imageLoaded && (
+        <div className="w-[300px] h-[300px] flex items-center justify-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-t-4 border-blue-500" />
+        </div>
+      )}
       <Image
-        className="w-[300px] h-[300px] object-cover "
+        className={`w-[300px] h-[300px] object-cover ${
+          !imageLoaded ? "opacity-0" : "opacity-100"
+        }`}
         height={300}
         width={250}
         src={product.image || defaultImage}
-        alt={product.title || "Default Title"}
+        alt={product.title || "Sony Playstation 5"}
+        onLoad={() => setImageLoaded(true)}
       />
       <div className="py-5 px-5">
         <h2 className="text-gray-700 font-semibold text-2xl">
